@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos/estilos.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,400;0,700;0,900;1,300&display=swap"
+    rel="stylesheet">
+  <title>Danieli Sosa | Frontend Jr</title>
+</head>
+
+<body>
+  <header>
+    <div id="fondo-p" class="parallax"></div>
+    <div class="cont-nav">
+      <div id="logo">
+        <span class="material-icons" id="ico-logo">
+          developer_mode
+        </span>
+        <h1 class="text-nav">Danieli Sosa</h1>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li><a class="text-nav" href="#about">
+              Sobre Mi
+            </a></li>
+          <li><a class="text-nav" href="#skill">
+              Habilidades
+            </a></li>
+          <li><a class="text-nav" href="#project">
+              Proyectos
+            </a></li>
+          <li><a class="text-nav" href="#contact">
+              Contacto
+            </a></li>
+        </ul>
+      </nav>
+      <div class="panel-btn">
+        <span class="icon-menu">
+
+        </span>
+      </div>
+
+
+    </div>
+    <div id="welcome" class="parallax">
+
+      <h3>Hola!, Yo soy</h3>
+      <div>
+
+        <p class="text-corrido1"></p>
+        <p class="text-corrido2"></p>
+      </div>
+    </div>
+
+  </header>
+  <main>
+    <section id="about">
+      <h2 class="titulos">Sobre Mi</h2>
+      <div>
+        <img src="./img/yo.jpg" alt="yo">
+        <div>
+          <p>Mi nombre es <strong>Danieli Sosa</strong></p>
+          <p>Y Soy: <strong class="text-corrido2"></strong></p>
+          <p>Apasionada por el mundo de la tecnologia realice mis estudios universitarios en Informatica, luego quede
+            encantada con n</p>
+          <p> Esta carrera me sirvió para tener conocimientos solidos y buenas bases sobre la
+            programación web del lado
+            frontend, adquiriendo conocimientos en Html, Css, Bootstrap, estructuras
+            de Diseño Responsive, Metodologías Css, , Sass, Javascript, Jquery, Json, Ajax y conectarse al backend a
+            través de
+            una Api.</p>
+          <p> Soy una persona apasionada por la tecnología y la programación, autodidacta, proactiva, con
+            capacidad de análisis y
+            resolución de problemas, y mi meta es seguir aprendiendo y crecer en el ámbito
+            profesional y laboral.</p>
+        </div>
+
+      </div>
+
+    </section>
+    <section id="skill">
+      <h2 class="titulos">Habilidades</h2>
+      <div class="content-med">
+        <div class="cont-skill">
+          <img src="./img/html.png" alt="html">
+        </div>
+        <div class="cont-skill">
+          <img src="./img/css.png" alt="css">
+        </div>
+        <div class="cont-skill">
+          <img src="./img/js.png" alt="js">
+        </div>
+        <div class="cont-skill">
+          <img src="./img/jquery.png" alt="jquery">
+        </div>
+        <div class="cont-skill">
+          <img src="./img/bootstrap.png" alt="bootstrap">
+        </div>
+        <div class="cont-skill">
+          <img src="./img/sass.png" alt="sass">
+        </div>
+      </div>
+    </section>
+    <section id="project">
+      <h2 class="titulos">Proyectos</h2>
+      <div class="content-med">
+        <article>
+          <div id="fondo-project-1" class="fondo-project"></div>
+          <div class="capa">
+            <p>Juego de memoria, usando las tecnologias Html, Css, Javascrip Bootstrap y Jquery</p>
+            <a class="btn" href="https://danielisosa.github.io/Memoria-Harry-Potter/">
+              Ver proyecto
+            </a>
+          </div>
+          <span>Memoria Harry Potter</span>
+        </article>
+        <article>
+          <div id="fondo-project-2" class="fondo-project"></div>
+          <div class="capa">
+            <p>Las tecnologias usadas fueron Html, Css, Javascript, Bootstrap, Jquery, Ajax y cosumiendo la api de
+              la academia</p>
+
+            <a target="_blank" href="https://danielisosa.github.io/Pagina-Cadif1/#">
+              Ver proyecto </a>
+          </div>
+          <span> Clon pagina Cadif1</span>
+        </article>
+        <article>
+          <div id="fondo-project-3" class="fondo-project"></div>
+          <div class="capa">
+            <p>El Portafolio se realizo con las tecnologias Html, Css, Javascript y Sass.</p>
+            <a target="_blank" href="#cont-principal">
+              Ver proyecto </a>
+          </div>
+          <span> Portafolio</span>
+        </article>
+      </div>
+    </section>
+    <section id="contact">
+      <h2 class="titulos">Contacto</h2>
+      <div id="formulario">
+        <form action="" method="post">
+          <div class="input-field">
+            <span class="material-icons">
+              person
+            </span>
+            <input type="text" name="nombre" id="nombre" required>
+            <span class="bar"></span>
+            <label for="Nombre">Nombre</label>
+          </div>
+          <div class="input-field">
+            <span class="material-icons">
+              email
+            </span>
+            <input type="email" name="email" id="email" required>
+            <span class="bar"></span>
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field">
+            <span class="material-icons">
+              edit
+            </span>
+            <span class="bar"></span>
+            <textarea name="mensaje" cols="30" rows="3" required></textarea>
+            <span class="bar"></span>
+            <label for="Mensaje">Mensaje</label>
+          </div>
+          <div id="div-btn"><button class="btn">Enviar</button></div>
+
+        </form>
+      </div>
+    </section>
+    <div id='subir'>
+      <a href='#cont-principal'><span class="material-icons subir">
+          arrow_circle_up
+        </span></a>
+    </div>
+    <footer>
+      <div>
+        <p class="small">Desarrollado por © Danieli Sosa 2022</p>
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/danieli-sosa-a8781114a/">
+          <img class="iconos" src="./img/linkedin.png" alt="linkedin"></a>
+        <a href="https://github.com/Danielisosa">
+          <img class="iconos" src="./img/github.png" alt="github"></a>
+      </div>
+
+
+    </footer>
+  </main>
+</body>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+
+</html>

@@ -1,0 +1,421 @@
+@use "variables" as *
+@use"queries" as *
+@use "menu-navegacion"
+@mixin contenedor-mediano
+  width: 62%
+  display: flex
+  justify-content: center
+  align-content: center
+  flex-wrap: wrap
+  padding: 0.4rem
+
+@mixin btn
+  background: $color-principal
+  border: 1px groove black
+  border-radius: 5px
+  padding: 10px 30px 
+  margin: 20px
+  text-decoration: none
+  color: $color-terciario
+  font-size: 1.2rem
+  font-weight: bold
+body
+  margin: 0
+  padding: 0
+  font-family: $font-principal
+  color: white
+  width: $max-width
+
+  header
+    width: $max-width
+    height: 100vh
+    display: flex
+    flex-wrap: wrap
+    position: relative
+ 
+    
+    #fondo-p
+      width: $max-width
+      height: 100vh
+      background: linear-gradient(to right, #750359b0 0%,#000000 100%),url(../img/webdeveloper.jpg)
+      background-size: cover
+      background-attachment: fixed
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+   
+    #welcome
+      position: relative
+      margin: auto 0 auto 40px
+      width: $max-width
+      height: 30%
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      padding: 1rem
+      @include small
+        margin: auto 0 auto 10px
+      div
+        width: 80%
+        display: flex
+        justify-content: flex-start
+        
+      h3
+        font-size: 3em
+        margin: 10px
+        color: white
+        @include small
+          font-size: 2em
+      .text-corrido1, .text-corrido2
+        font-size: 3.5em
+        font-weight: 900
+        letter-spacing: 5px
+        margin: 10px
+        color: white
+        text-shadow:  3px 2px 0px $color-principal, 7px 7px 0px rgba(0, 0, 0, 0.2)
+        @include small
+          font-size: 2.5em
+          margin: 5px
+
+  main
+    width: $max-width
+    height: auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    background: $color-terciario
+    span
+      font-size: 1.8rem
+      font-weight: 400
+      margin: 0.7em
+      color: $color-terciario
+      text-shadow:  2px 2px 2px $color-principal
+      transition: transform 1s ease-in-out
+    p
+      display: block
+      font-size: 1.3rem
+      color: white
+      text-shadow: 2px 2px 2px black
+      margin: 8px
+      word-spacing: 3px
+    .titulos
+      margin-top: 6%
+      font-size: 2rem
+      font-weight: 900
+      letter-spacing: 2px
+      text-shadow:  3px 2px 2px $color-principal, 5px 5px 0px rgba(0, 0, 0, 0.623)
+
+    #about,  #skill,  #project,  #contact
+      width: $max-width
+      height: 100vh
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      @include small
+        height: auto
+        padding-bottom: 20px
+      @include medium
+        height: auto
+        padding-bottom: 20px
+    #about
+
+      background: linear-gradient(to bottom, #b92093b2 0%,#570141fa 100%)
+      div
+        width: 75%
+        display: flex
+        justify-content: space-around
+        align-items: flex-start
+        @include medium 
+          width: 90%
+        @include large
+          width: 90%  
+        @include small
+          width: 95%
+          flex-direction: column
+          align-items: center
+        img
+          width: 360px
+          height: 450px
+          border-radius: 10px
+          box-shadow:  0px 3px 10px #1f1e1ef5
+          @include medium
+            width: 260px
+            height: 350px
+          @include small
+            width: 240px
+            height: 320px
+        div
+          @include contenedor-mediano
+          padding-left: 3rem
+          text-align: start
+          height: 70%
+          justify-content: start
+          flex-direction: column
+          flex-wrap: nowrap
+          align-items: flex-start
+          @include medium
+            padding-left: 2rem
+          @include small
+            width: 90%
+            font-size: 0.9rem
+            padding-left: 1.3rem
+          strong, #text-corrido3
+            font-size: 1.8rem
+            color: black
+            text-shadow:  3px 2px 0px $color-principal
+          
+
+          
+    #skill
+      background: linear-gradient(to top, $color-terciario 0%,#505050a9 100%)   
+ 
+      .content-med
+        @include contenedor-mediano
+        @include medium
+          width: 80%
+        .cont-skill
+          width: 12rem
+          height: 12rem
+          display: flex
+          justify-content: center
+          align-items: center
+          margin: 10px
+          background: white
+          border-radius: 5px
+          box-shadow:  0px 3px 10px #535353da
+          transform: scale(1)
+          transition: transform 0.5s ease-in-out
+          @include small
+            width: 16rem
+          img
+            width: 70%
+            height: 70%
+            transform: skew(0)
+            transition: transform 1s ease-in-out
+            &:hover
+              width: 80%
+              transform: skew(10deg)
+          &:hover
+            transform: scale(1.09)
+            border: 2px groove $color-secundario
+            background: $color-principal
+
+
+    #project
+      background: linear-gradient(to bottom, #b92093b2 0%,#420032fa 100%)
+      .content-med
+        width: $max-width
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+      
+        @include small
+          flex-direction: column
+          align-items: center
+        article
+          width: 24rem
+          height: 23rem
+          position: relative
+          background: #161616
+          margin: 0.6rem
+          display: flex
+          flex-direction: column
+          align-items: center
+          border-radius: 10px
+          border: 2px solid $color-terciario
+          margin-bottom: 10px
+          box-shadow:  1px 1px 10px #313131e3
+          @include large
+            width: 22rem
+          @include small
+            width: 90%
+            
+          .fondo-project
+            width: $max-width
+            height: 75%
+            border-radius: 5px 5px 0 0
+          #fondo-project-1
+            background-image: url(../img/memoria.png)
+            background-size: cover
+          #fondo-project-2
+            background-image: url(../img/cadif1.png)
+            background-size: cover
+          #fondo-project-3
+            background-image: url(../img/portfolio.png)
+            background-size: cover
+          .capa
+            display: none
+            opacity: 0
+            position: absolute
+            padding: 10px 30px 10px 30px 
+            box-sizing: border-box
+            width: $max-width
+            background: #181818ce    
+            text-align: center   
+            transition: all 0.5s ease-in-out
+            z-index: 10
+            p
+              font-size: 1.5em
+              position: absolute
+              top: 30%
+            a
+              @include  btn
+              position: absolute
+              bottom: 3%
+              &:hover
+                background: $color-secundario
+                border: 3px solid $color-principal
+                font-size: 1.3rem
+                box-shadow: 0 0.5em 0.5em -0.4em $color-principal
+                transform: translateY(-0.35em)
+          &:hover >.capa
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center  
+            opacity: 1
+            border: 5px solid $color-principal
+            border-radius: 8px
+            height: $max-width
+            animation: all 1500ms ease forwards
+          &:hover >span
+            z-index: 10
+            position: absolute
+            font-weight: 700
+            font-size: 2.2rem
+            transition: all 0.5s ease-in-out
+            transform: skew(-20deg)
+    #contact
+      background: linear-gradient(to top, $color-terciario 0%,#505050a9 100%)
+      #formulario
+        width: 45%
+        height: 450px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: $color-secundario
+        border-radius: 5px
+        box-shadow:  1px 1px 5px #1b1b1be3
+        @include small
+          width: 88%
+        @include medium
+          width: 60%
+        .input-field
+          display: flex
+          align-items: baseline
+          margin-bottom: 35px
+          position: relative
+          input, textarea
+            font-size: 18px
+            color: $color-terciario
+            padding: 8px 8px 8px 5px
+            display: block
+            width: 70%
+            border: none
+            border-bottom: 1px solid #757575
+            background: $color-secundario
+            &:focus
+              outline: none
+              background: $color-secundario
+              & ~ label
+                top: -10px
+                font-size: 1rem
+                color: $color-principal              
+            &:valid ~ label
+              top: -10px
+              font-size: 1rem
+              color: $color-principal
+              &~ .bar:before, input:focus ~ .bar:after
+                width: 100%
+          label 
+            color: #999
+            font-size: 18px
+            font-weight: normal
+            position: absolute
+            pointer-events: none
+            left: 50px
+            top: 15px
+            transition: 0.2s ease all 
+            -moz-transition: 0.2s ease all 
+            -webkit-transition: 0.2s ease all
+          .bar
+            position: absolute
+            bottom: -15px
+            width: 265px
+            &::before, .bar::after
+              content: ''
+              height: 2px 
+              width: 0
+              bottom: 1px 
+              position: absolute
+              background: $color-principal
+              transition: 0.5s ease all 
+              -moz-transition: 0.5s ease all 
+              -webkit-transition: 0.5s ease all
+            &::after
+              right: 50%
+            &::before
+              left: 35px
+        #div-btn
+          width: 100%
+          display: flex
+          justify-content: center
+          align-items: center
+          
+        .btn
+          @include btn
+          &:hover, &:focus
+            background: $color-secundario
+            border: 3px solid $color-principal
+            font-size: 1.3rem
+            box-shadow: 0 0.5em 0.5em -0.4em $color-principal
+            transform: translateY(-0.35em)
+    #subir
+      display: none
+      position: fixed
+      right: 2%
+      margin-left: 430px 
+      bottom: 1%  
+         
+      span
+        font-size: 3.2em
+        border-radius: 30px
+        box-shadow: 4px 0px 10px rgba(0,0,0,0.7)
+        -moz-box-shadow: 4px 0px 10px rgba(0,0,0,0.7)
+        -webkit-box-shadow: 4px 0px 10px rgba(0,0,0,0.7)
+        color: $color-principal
+        background: $color-secundario
+        &:hover
+          color:  $color-principal
+          background: $color-secundario
+        
+          cursor: pointer
+  footer
+    width: 100%
+    height: 80px
+    background: linear-gradient(to left, #b92093f1 0%,#000000ed 100%)
+    display: flex
+    justify-content: center
+    align-items: center
+    div:nth-child(1)
+      width: 60%
+      display: flex
+      justify-content: flex-end
+    div:nth-child(2)
+      display: flex
+      width: 40%
+      justify-content: flex-end
+      padding: 5px
+    .iconos
+      width: 50px
+      height: 50px
+      margin: 5px
+    .small
+      font-size: 15px
+
+

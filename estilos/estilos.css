@@ -1,0 +1,712 @@
+.cont-nav {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  z-index: 20;
+  display: flex;
+  flex-direction: columns;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .cont-nav {
+    padding: 0 10px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .cont-nav {
+    padding: 0 10px;
+    background: #e6e6e6;
+  }
+}
+.cont-nav #logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 25;
+}
+.cont-nav #logo h1 {
+  font-weight: 900;
+  font-size: 2.1em;
+  letter-spacing: 0.05em;
+  text-shadow: 3px 3px 0px #fd0087, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .cont-nav #logo h1 {
+    font-size: 1.8em;
+  }
+}
+.cont-nav nav {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont-nav nav .menu {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .cont-nav nav .menu {
+    position: absolute;
+    left: -100%;
+    top: 80px;
+    height: 100vh;
+    background: #e6e6e6;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 1s;
+  }
+  .cont-nav nav .menu.active {
+    left: 0;
+  }
+}
+.cont-nav nav .menu li {
+  box-sizing: border-box;
+  padding: 20px;
+  list-style: none;
+  display: flex;
+  padding: 5px;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .cont-nav nav .menu li {
+    width: 50%;
+    height: 100px;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+.cont-nav nav .menu li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 2px 1px 1px #fd0087, 2px 1px 0px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+.cont-nav nav .menu li a::after, .cont-nav nav .menu li a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: width 540ms, opacity 300ms ease;
+  bottom: -5px;
+}
+.cont-nav nav .menu li a::before {
+  width: 0;
+  background-color: #fd0087;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+.cont-nav nav .menu li a::after {
+  width: 100%;
+  opacity: 0;
+}
+.cont-nav nav .menu li a:hover {
+  color: #fd0087;
+  border-bottom: 1px solid #fd0087;
+}
+.cont-nav nav .menu li a:hover::before {
+  transform: scaleX(1);
+  animation: width 1500ms ease forwards;
+}
+.cont-nav nav .menu li a:hover::after {
+  opacity: 1;
+}
+.cont-nav .panel-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  height: 50px;
+  width: 50px;
+  background: #fd0087;
+  color: #e6e6e6;
+  z-index: 25;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .cont-nav .panel-btn {
+    display: flex;
+  }
+}
+.cont-nav .panel-btn.open .icon-menu {
+  background-color: transparent;
+  transform: translateX(-30px);
+}
+.cont-nav .panel-btn.open .icon-menu::before {
+  transform: rotate(45deg) translate(20px, -20px);
+}
+.cont-nav .panel-btn.open .icon-menu::after {
+  transform: rotate(-45deg) translate(20px, 20px);
+}
+.cont-nav .panel-btn .icon-menu {
+  width: 30px;
+  height: 6px;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  transition: 220ms ease-in-out;
+}
+.cont-nav .panel-btn .icon-menu::before, .cont-nav .panel-btn .icon-menu::after {
+  content: "";
+  width: 100%;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  transition: 220ms ease-in-out;
+}
+.cont-nav .panel-btn .icon-menu::before {
+  transform: translateY(-12px);
+}
+.cont-nav .panel-btn .icon-menu::after {
+  transform: translateY(12px);
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .cont-nav .panel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: white;
+  width: 100%;
+}
+body header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+body header #fondo-p {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #750359b0 0%, #000000 100%), url(../img/webdeveloper.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+body header #welcome {
+  position: relative;
+  margin: auto 0 auto 40px;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body header #welcome {
+    margin: auto 0 auto 10px;
+  }
+}
+body header #welcome div {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+}
+body header #welcome h3 {
+  font-size: 3em;
+  margin: 10px;
+  color: white;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body header #welcome h3 {
+    font-size: 2em;
+  }
+}
+body header #welcome .text-corrido1, body header #welcome .text-corrido2 {
+  font-size: 3.5em;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin: 10px;
+  color: white;
+  text-shadow: 3px 2px 0px #fd0087, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body header #welcome .text-corrido1, body header #welcome .text-corrido2 {
+    font-size: 2.5em;
+    margin: 5px;
+  }
+}
+body main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #e6e6e6;
+}
+body main span {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0.7em;
+  color: #e6e6e6;
+  text-shadow: 2px 2px 2px #fd0087;
+  transition: transform 1s ease-in-out;
+}
+body main p {
+  display: block;
+  font-size: 1.3rem;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  margin: 8px;
+  word-spacing: 3px;
+}
+body main .titulos {
+  margin-top: 6%;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 3px 2px 2px #fd0087, 5px 5px 0px rgba(0, 0, 0, 0.623);
+}
+body main #about, body main #skill, body main #project, body main #contact {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #about, body main #skill, body main #project, body main #contact {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  body main #about, body main #skill, body main #project, body main #contact {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+body main #about {
+  background: linear-gradient(to bottom, #b92093b2 0%, #570141fa 100%);
+}
+body main #about div {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  body main #about div {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  body main #about div {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #about div {
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+body main #about div img {
+  width: 360px;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px #1f1e1ef5;
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  body main #about div img {
+    width: 260px;
+    height: 350px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #about div img {
+    width: 240px;
+    height: 320px;
+  }
+}
+body main #about div div {
+  width: 62%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 0.4rem;
+  padding-left: 3rem;
+  text-align: start;
+  height: 70%;
+  justify-content: start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  body main #about div div {
+    padding-left: 2rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #about div div {
+    width: 90%;
+    font-size: 0.9rem;
+    padding-left: 1.3rem;
+  }
+}
+body main #about div div strong, body main #about div div #text-corrido3 {
+  font-size: 1.8rem;
+  color: black;
+  text-shadow: 3px 2px 0px #fd0087;
+}
+body main #skill {
+  background: linear-gradient(to top, #e6e6e6 0%, #505050a9 100%);
+}
+body main #skill .content-med {
+  width: 62%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 0.4rem;
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  body main #skill .content-med {
+    width: 80%;
+  }
+}
+body main #skill .content-med .cont-skill {
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px #535353da;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #skill .content-med .cont-skill {
+    width: 16rem;
+  }
+}
+body main #skill .content-med .cont-skill img {
+  width: 70%;
+  height: 70%;
+  transform: skew(0);
+  transition: transform 1s ease-in-out;
+}
+body main #skill .content-med .cont-skill img:hover {
+  width: 80%;
+  transform: skew(10deg);
+}
+body main #skill .content-med .cont-skill:hover {
+  transform: scale(1.09);
+  border: 2px groove #252525;
+  background: #fd0087;
+}
+body main #project {
+  background: linear-gradient(to bottom, #b92093b2 0%, #420032fa 100%);
+}
+body main #project .content-med {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #project .content-med {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+body main #project .content-med article {
+  width: 24rem;
+  height: 23rem;
+  position: relative;
+  background: #161616;
+  margin: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #e6e6e6;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 10px #313131e3;
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  body main #project .content-med article {
+    width: 22rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #project .content-med article {
+    width: 90%;
+  }
+}
+body main #project .content-med article .fondo-project {
+  width: 100%;
+  height: 75%;
+  border-radius: 5px 5px 0 0;
+}
+body main #project .content-med article #fondo-project-1 {
+  background-image: url(../img/memoria.png);
+  background-size: cover;
+}
+body main #project .content-med article #fondo-project-2 {
+  background-image: url(../img/cadif1.png);
+  background-size: cover;
+}
+body main #project .content-med article #fondo-project-3 {
+  background-image: url(../img/portfolio.png);
+  background-size: cover;
+}
+body main #project .content-med article .capa {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  padding: 10px 30px 10px 30px;
+  box-sizing: border-box;
+  width: 100%;
+  background: #181818ce;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+}
+body main #project .content-med article .capa p {
+  font-size: 1.5em;
+  position: absolute;
+  top: 30%;
+}
+body main #project .content-med article .capa a {
+  background: #fd0087;
+  border: 1px groove black;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin: 20px;
+  text-decoration: none;
+  color: #e6e6e6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 3%;
+}
+body main #project .content-med article .capa a:hover {
+  background: #252525;
+  border: 3px solid #fd0087;
+  font-size: 1.3rem;
+  box-shadow: 0 0.5em 0.5em -0.4em #fd0087;
+  transform: translateY(-0.35em);
+}
+body main #project .content-med article:hover > .capa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border: 5px solid #fd0087;
+  border-radius: 8px;
+  height: 100%;
+  animation: all 1500ms ease forwards;
+}
+body main #project .content-med article:hover > span {
+  z-index: 10;
+  position: absolute;
+  font-weight: 700;
+  font-size: 2.2rem;
+  transition: all 0.5s ease-in-out;
+  transform: skew(-20deg);
+}
+body main #contact {
+  background: linear-gradient(to top, #e6e6e6 0%, #505050a9 100%);
+}
+body main #contact #formulario {
+  width: 45%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #252525;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #1b1b1be3;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  body main #contact #formulario {
+    width: 88%;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  body main #contact #formulario {
+    width: 60%;
+  }
+}
+body main #contact #formulario .input-field {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 35px;
+  position: relative;
+}
+body main #contact #formulario .input-field input, body main #contact #formulario .input-field textarea {
+  font-size: 18px;
+  color: #e6e6e6;
+  padding: 8px 8px 8px 5px;
+  display: block;
+  width: 70%;
+  border: none;
+  border-bottom: 1px solid #757575;
+  background: #252525;
+}
+body main #contact #formulario .input-field input:focus, body main #contact #formulario .input-field textarea:focus {
+  outline: none;
+  background: #252525;
+}
+body main #contact #formulario .input-field input:focus ~ label, body main #contact #formulario .input-field textarea:focus ~ label {
+  top: -10px;
+  font-size: 1rem;
+  color: #fd0087;
+}
+body main #contact #formulario .input-field input:valid ~ label, body main #contact #formulario .input-field textarea:valid ~ label {
+  top: -10px;
+  font-size: 1rem;
+  color: #fd0087;
+}
+body main #contact #formulario .input-field input:valid ~ label ~ .bar:before, body main #contact #formulario .input-field input:valid ~ label input:focus ~ .bar:after, body main #contact #formulario .input-field textarea:valid ~ label ~ .bar:before, body main #contact #formulario .input-field textarea:valid ~ label input:focus ~ .bar:after {
+  width: 100%;
+}
+body main #contact #formulario .input-field label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 50px;
+  top: 15px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+body main #contact #formulario .input-field .bar {
+  position: absolute;
+  bottom: -15px;
+  width: 265px;
+}
+body main #contact #formulario .input-field .bar::before, body main #contact #formulario .input-field .bar .bar::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #fd0087;
+  transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+}
+body main #contact #formulario .input-field .bar::after {
+  right: 50%;
+}
+body main #contact #formulario .input-field .bar::before {
+  left: 35px;
+}
+body main #contact #formulario #div-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #contact #formulario .btn {
+  background: #fd0087;
+  border: 1px groove black;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin: 20px;
+  text-decoration: none;
+  color: #e6e6e6;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+body main #contact #formulario .btn:hover, body main #contact #formulario .btn:focus {
+  background: #252525;
+  border: 3px solid #fd0087;
+  font-size: 1.3rem;
+  box-shadow: 0 0.5em 0.5em -0.4em #fd0087;
+  transform: translateY(-0.35em);
+}
+body main #subir {
+  display: none;
+  position: fixed;
+  right: 2%;
+  margin-left: 430px;
+  bottom: 1%;
+}
+body main #subir span {
+  font-size: 3.2em;
+  border-radius: 30px;
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.7);
+  color: #fd0087;
+  background: #252525;
+}
+body main #subir span:hover {
+  color: #fd0087;
+  background: #252525;
+  cursor: pointer;
+}
+body footer {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to left, #b92093f1 0%, #000000ed 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body footer div:nth-child(1) {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+body footer div:nth-child(2) {
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+  padding: 5px;
+}
+body footer .iconos {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+body footer .small {
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=estilos.css.map */
