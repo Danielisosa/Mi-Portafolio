@@ -275,7 +275,7 @@ body main span {
 }
 body main p {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: white;
   text-shadow: 2px 2px 2px black;
   margin: 8px;
@@ -380,7 +380,7 @@ body main #about div div {
   }
 }
 body main #about div div strong, body main #about div div #text-corrido3 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: black;
   text-shadow: 3px 2px 0px #fd0087;
 }
