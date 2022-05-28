@@ -12,40 +12,45 @@
 
 @mixin btn
   background: $color-principal
-  border: 1px groove black
-  border-radius: 5px
-  padding: 10px 30px 
-  margin: 20px
+  border: 2px groove $color-secundario
+  border-radius: 15px
+  padding: 8px 25px 
   text-decoration: none
   color: $color-terciario
   font-size: 1.2rem
   font-weight: bold
+  cursor: pointer
+  transition: all 0.5s ease
+  transition-delay: 0.2s
+
 body
-  margin: 0
+  margin: 0px
   padding: 0
   font-family: $font-principal
   color: white
   width: $max-width
-
   header
     width: $max-width
     height: 100vh
     display: flex
     flex-wrap: wrap
     position: relative
- 
+    background: linear-gradient(to bottom,$color-principal -20% , black 100%)   
     
     #fondo-p
       width: $max-width
       height: 100vh
-      background: linear-gradient(to right, #ff3ace85 0%,#000000f8 100%),url(../img/webdeveloper.jpg)
+      padding-bottom: 60vh
+      clip-path: circle(145vh at 50% -44vh)
+      background: linear-gradient(to bottom, #130013e1 50%, $color-principal 180%),url(../img/webdeveloper2.jpg)
       background-size: cover
+      background-repeat: no-repeat
+      background-position: 50% 50%
       background-attachment: fixed
       position: absolute
       top: 0
       left: 0
       z-index: 0
-   
     #welcome
       position: relative
       margin: auto 0 auto 40px
@@ -54,32 +59,35 @@ body
       display: flex
       flex-direction: column
       justify-content: flex-start
-      align-items: flex-start
+      align-items: center
       padding: 1rem
       @include small
         margin: auto 0 auto 10px
       div
         width: 80%
         display: flex
-        justify-content: flex-start
-        
+        justify-content: center
+        align-items: center
       h3
-        font-size: 3em
+        font-size: 3.3em
+        font-weight: 700
         margin: 10px
         color: white
         @include small
           font-size: 2em
       .text-corrido1, .text-corrido2
-        font-size: 3.5em
+        font-size: 4em
         font-weight: 900
-        letter-spacing: 5px
-        margin: 10px
+        margin-top:  10px
+        margin-bottom:  10px
         color: white
-        text-shadow:  3px 2px 0px $color-principal, 7px 7px 0px rgba(0, 0, 0, 0.2)
+        text-align: center
+        text-shadow:  3px 3px 1px $color-principal, 7px 7px 0px rgba(0, 0, 0, 0.733)
         @include small
-          font-size: 2.5em
+          font-size: 2.4em
           margin: 5px
 
+    //MAIN
   main
     width: $max-width
     height: auto
@@ -90,14 +98,14 @@ body
     background: $color-terciario
     span
       font-size: 1.8rem
-      font-weight: 400
-      margin: 0.7em
-      color: $color-terciario
+      font-weight: 700
+      margin: 0.5em
+      color: $color-secundario
       text-shadow:  2px 2px 2px $color-principal
       transition: transform 1s ease-in-out
     p
       display: block
-      font-size: 1.2rem
+      font-size: 1.4rem
       color: white
       text-shadow: 2px 2px 2px black
       margin: 8px
@@ -107,25 +115,28 @@ body
       font-size: 2rem
       font-weight: 900
       letter-spacing: 2px
-      text-shadow:  3px 2px 2px $color-principal, 5px 5px 0px rgba(0, 0, 0, 0.623)
+      text-shadow:  3px 2px 2px $color-principal, 5px 5px 0px rgba(0, 0, 0, 0.918)
 
     #about,  #skill,  #project,  #contact
       width: $max-width
-      height: 100vh
+      height: auto
       display: flex
       flex-direction: column
       justify-content: center
       align-items: center
+      padding-top: 10px
+      padding-bottom: 40px
       @include small
         height: auto
         padding-bottom: 20px
       @include medium
         height: auto
         padding-bottom: 20px
-    #about
 
-      background: linear-gradient(to bottom, #b92093b2 0%,#570141fa 100%)
-      div
+      //SECCION SOBRE MI
+    #about
+      background: linear-gradient(to top,$color-principal -20% , black 100%)   
+      #cont-about
         width: 75%
         display: flex
         justify-content: space-around
@@ -138,160 +149,291 @@ body
           width: 95%
           flex-direction: column
           align-items: center
-        img
+        .mi-foto
           width: 360px
           height: 450px
-          border-radius: 10px
-          box-shadow:  0px 3px 10px #1f1e1ef5
+          border-radius: 8px 
+          box-shadow: 0 0.7em 0.7em -0.4em $color-terciario    
           @include medium
             width: 260px
-            height: 350px
+            height: 330px
           @include small
             width: 240px
-            height: 320px
-        div
+            height: 300px
+        hr
+          margin-top:  20px
+          margin-bottom: 20px
+        .about__cont
           @include contenedor-mediano
+          position: relative
           padding-left: 3rem
           text-align: start
           height: 70%
-          justify-content: start
+          justify-content: center
           flex-direction: column
           flex-wrap: nowrap
-          align-items: flex-start
-          @include medium
-            padding-left: 2rem
-          @include small
-            width: 90%
-            font-size: 0.9rem
-            padding-left: 1.3rem
-          strong, #text-corrido3
-            font-size: 1.7rem
-            color: black
-            text-shadow:  3px 2px 0px $color-principal
-          
+          align-items: center
+          .about__cont-info
+            justify-content: start
 
-          
+          @include medium
+            padding-left: 1.5rem
+          @include small
+            width: 95%
+            font-size: 1.3rem
+            padding-left: 1rem
+          .nombre
+            font-size: 1.6rem
+            color: $color-terciario
+            text-shadow:  2px 2px 1px $color-principal
+
+          .text-corrido3
+            position: absolute
+            top: 48px
+            left: 120px
+            font-size: 1.6rem
+            color: rgba(218, 179, 215, 0.397)
+            display: inline
+            @include small
+              font-size: 1.5rem
+              left: 90px
+            strong::before
+              content: "Frontend Developer Jr"
+              position: absolute
+              top: 0
+              left: 0
+              width: 0
+              height: 100%
+              overflow: hidden
+              color: $color-terciario
+              text-shadow:  2px 2px 1px $color-principal
+              animation: load 8s linear infinite
+        #btn-Curriculum
+          @include  btn
+          display: flex
+          align-items: center
+          margin-top: 20px
+          background: $color-secundario
+          border: 4px solid $color-principal
+          .descarga
+            color: white
+            font-size: 1.8rem
+            margin:  0
+          &:hover        
+            background: $color-principal
+            border: 3px solid $color-secundario
+            font-size: 1.2rem
+            box-shadow: 0 0.5em 0.5em -0.4em $color-secundario
+            transform: translateY(-0.35em)
+        //SECCION MIS HABILIDADES
     #skill
-      background: linear-gradient(to top, $color-terciario 0%,#505050a9 100%)   
+      background: linear-gradient(to bottom,$color-principal -20% , black 100%)   
  
-      .content-med
+      .content-med        
         @include contenedor-mediano
         @include medium
           width: 80%
         .cont-skill
-          width: 14rem
-          height: 14rem
-          display: flex
-          justify-content: center
+          width: 12rem
+          height: 8rem
+          display: inline-flex
+          flex-direction: column
+          justify-content: space-around
           align-items: center
-          margin: 10px
-          background: white
-          border-radius: 5px
-          box-shadow:  0px 3px 10px #535353da
-          transform: scale(1)
-          transition: transform 0.5s ease-in-out
+          flex-wrap: wrap
+          margin: 1.5rem
           @include small
             width: 16rem
           img
-            width: 70%
-            height: 70%
-            transform: skew(0)
-            transition: transform 1s ease-in-out
-            &:hover
-              width: 80%
-              transform: skew(10deg)
-          &:hover
-            transform: scale(1.09)
-            border: 2px groove $color-secundario
-            background: $color-principal
-
-
+            width: 100px
+            height: 90px
+          .titulo-skill
+            font-family: $font-principal
+            font-weight: 900            
+            color: $color-principal
+            padding: 1.5rem            
+            transition: all .5s 
+            position: relative
+            perspective: 40rem
+            &::after
+              content: ''
+              display: block
+              width: 100%
+              height: 60%
+              position: absolute       
+              top: 6.5rem
+              left: 0
+              border-radius: 15px
+              background: #ffffff46
+              transform: rotateX(80deg)             
+              z-index: 2
+            &::before
+              content: ''
+              display: block           
+              width: 100%
+              height: 100%
+              position: absolute
+              top: 0
+              left: 0
+              background: white
+              border-radius: 15px
+              z-index: -1
+            &:hover:before         
+              animation: rotate 1s
+              transition: all .5s
+        
+        //SECCION MIS PROYECTOS
     #project
-      background: linear-gradient(to bottom, #b92093b2 0%,#420032fa 100%)
+      background: linear-gradient(to top,$color-principal -20% , black 100%)   
       .content-med
         width: $max-width
         display: flex
         flex-wrap: wrap
         justify-content: center
-      
         @include small
           flex-direction: column
           align-items: center
         article
+          position: relative
           width: 24rem
           height: 23rem
-          position: relative
-          background: #161616
+          color: $color-principal
           margin: 0.6rem
-          display: flex
-          flex-direction: column
-          align-items: center
-          border-radius: 10px
+          border-radius: 20px
           border: 2px solid $color-terciario
           margin-bottom: 10px
           box-shadow:  1px 1px 10px #313131e3
+          overflow: hidden
           @include large
             width: 22rem
           @include small
             width: 90%
-            
-          .fondo-project
-            width: $max-width
-            height: 75%
-            border-radius: 5px 5px 0 0
-          #fondo-project-1
-            background-image: url(../img/memoria.png)
-            background-size: cover
-          #fondo-project-2
-            background-image: url(../img/cadif1.png)
-            background-size: cover
-          #fondo-project-3
-            background-image: url(../img/portfolio.png)
-            background-size: cover
-          .capa
-            display: none
-            opacity: 0
+        .card__content
+          position: absolute
+          left: 0
+          top:40%
+          bottom: 0
+          width: 100%
+          display: flex
+          justify-content: flex-start
+          flex-direction: column
+          align-items: center
+          padding: 10px
+          background: #d8d8d8
+          border-top-left-radius: 20px
+          transform: translateY(140px) 
+          transition: transform .25s
+          box-sizing: 0
+          &::before
+            content: ''
             position: absolute
-            padding: 10px 30px 10px 30px 
-            box-sizing: border-box
-            width: $max-width
-            background: #181818ce    
-            text-align: center   
-            transition: all 0.5s ease-in-out
-            z-index: 10
-            p
-              font-size: 1.5em
-              position: absolute
-              top: 30%
-            a
-              @include  btn
-              position: absolute
-              bottom: 3%
-              &:hover
-                background: $color-secundario
-                border: 3px solid $color-principal
-                font-size: 1.3rem
-                box-shadow: 0 0.5em 0.5em -0.4em $color-principal
-                transform: translateY(-0.35em)
-          &:hover >.capa
-            display: flex
-            flex-direction: column
-            justify-content: center
-            align-items: center  
-            opacity: 1
-            border: 5px solid $color-principal
-            border-radius: 8px
-            height: $max-width
-            animation: all 1500ms ease forwards
-          &:hover >span
-            z-index: 10
-            position: absolute
+            top: -48px
+            right: -30px
+            width: 200px
+            height: 110px
+            transform: rotate(176deg)
+            border-radius: 50%
+            box-shadow: inset 48px 48px #d8d8d8
+            z-index: -2
+          .card__title
+            color: $color-secundario
+            line-height: 15px
             font-weight: 700
-            font-size: 2.2rem
-            transition: all 0.5s ease-in-out
-            transform: skew(-20deg)
+            @include small
+              font-size: 1.5rem
+          .card__description
+            font-size: 1.4rem
+            text-shadow: 1px 1px 2px $color-terciario
+            margin-bottom: 5px
+            color: $color-secundario
+            font-weight: 400
+            opacity: 0
+            transition: opacity .5s
+            @include small
+              font-size: 1.3rem
+        .card:hover .card__content
+          transform:  translateY(0)
+        .card:hover .card__description
+          opacity: 1
+          transition-delay: .25s
+        a
+          @include  btn
+          position: absolute
+          top: 80% 
+          &:hover        
+            background: $color-secundario
+            border: 3px solid $color-principal
+            font-size: 1.2rem
+            box-shadow: 0 0.5em 0.5em -0.4em $color-principal
+            transform: translateY(-0.35em)
+         
+        #fondo-project-1
+          background-image: url(../img/memoria.png)
+          background-size: cover
+          background-position: 50% 50%
+
+        #fondo-project-2
+          background-image: url(../img/cadif1.png)
+          background-size: cover
+          background-position: 50% 50%
+        #fondo-project-3
+          background-image: url(../img/portafolio.png)
+          background-size: cover
+          background-position: 50% 50%
+        
+        //SECCION CONTACTAME
     #contact
-      background: linear-gradient(to top, $color-terciario 0%,#505050a9 100%)
+      background: linear-gradient(to bottom,$color-principal -20% , black 100%)   
+      .content-grand
+        width: 95%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px
+        @include small
+          flex-direction: column
+          padding: 5px
+      .content-med
+        width: 47%
+        display: flex
+        flex-direction: column
+        @include small
+          width: 100%
+          flex-direction: row
+          flex-wrap: wrap
+          font-size: 1rem
+      .contact--item
+        display: flex
+        justify-content: flex-start
+        margin: 20px
+        @include medium
+          flex-direction: column
+        @include small
+          margin: 10px
+        img
+          width: 40px
+          height: 40px
+          background: $color-terciario
+          border-radius: 5px 
+          padding: 10px      
+          @include small
+            width: 40px
+            height: 40px
+        .contact-info
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+        .contact__title
+          color: $color-terciario
+          font-size: 1.2rem
+          text-shadow: 3px 3px 0px $color-secundario
+          font-weight: 500
+          margin: 5px
+        .contact_subtitle
+          margin: 5px
+          font-size: 1.2rem
+          @include small
+            font-size: 1rem
       #formulario
         width: 45%
         height: 450px
@@ -299,11 +441,11 @@ body
         flex-direction: column
         justify-content: center
         align-items: center
-        background: $color-secundario
-        border-radius: 5px
-        box-shadow:  1px 1px 5px #1b1b1be3
+        background: $color-terciario
+        border-radius: 20px
+        box-shadow: 0 0.5em 0.5em -0.4em $color-principal
         @include small
-          width: 88%
+          width: 90%
         @include medium
           width: 60%
         .input-field
@@ -313,19 +455,19 @@ body
           position: relative
           input, textarea
             font-size: 18px
-            color: $color-terciario
+            color: $color-secundario
             padding: 8px 8px 8px 5px
             display: block
-            width: 70%
+            width: 80%
             border: none
             border-bottom: 1px solid #757575
-            background: $color-secundario
+            background: $color-terciario
             &:focus
               outline: none
-              background: $color-secundario
+              background: $color-terciario
               & ~ label
                 top: -10px
-                font-size: 1rem
+                font-size: 1.1rem
                 color: $color-principal              
             &:valid ~ label
               top: -10px
@@ -334,9 +476,9 @@ body
               &~ .bar:before, input:focus ~ .bar:after
                 width: 100%
           label 
-            color: #999
-            font-size: 18px
-            font-weight: normal
+            color: $color-secundario
+            font-size: 1.3rem
+            font-weight: 700
             position: absolute
             pointer-events: none
             left: 50px
@@ -375,48 +517,118 @@ body
             border: 3px solid $color-principal
             font-size: 1.3rem
             box-shadow: 0 0.5em 0.5em -0.4em $color-principal
-            transform: translateY(-0.35em)
+          
+ 
     #subir
       display: none
       position: fixed
       right: 2%
       margin-left: 430px 
       bottom: 1%  
-         
       span
         font-size: 3.2em
         border-radius: 30px
-        box-shadow: 4px 0px 10px rgba(0,0,0,0.7)
+        box-shadow: 4px 0px 10px colo
         -moz-box-shadow: 4px 0px 10px rgba(0,0,0,0.7)
         -webkit-box-shadow: 4px 0px 10px rgba(0,0,0,0.7)
         color: $color-principal
         background: $color-secundario
         &:hover
           color:  $color-principal
-          background: $color-secundario
-        
+          background: $color-terciario
           cursor: pointer
   footer
     width: 100%
-    height: 80px
-    background: linear-gradient(to left, #b92093f1 0%,#000000ed 100%)
+    height: 150px
+    background: linear-gradient(to top,$color-principal -50% , black 100%)  
+    border-top: 5px groove $color-secundario
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
-    div:nth-child(1)
-      width: 60%
-      display: flex
-      justify-content: flex-end
-    div:nth-child(2)
-      display: flex
-      width: 40%
-      justify-content: flex-end
-      padding: 5px
-    .iconos
-      width: 50px
-      height: 50px
-      margin: 5px
+  .footer--img
+    width: 100%
+    display: flex
+    justify-content: center
+    img
+      background: $color-terciario
+      border-radius: 10px
+      &:hover, &:focus
+        border: 1px solid $color-principal
+        box-shadow: 0 0.6em 0.5em -0.4em $color-principal
+  .footer--text
+    display: flex
+    flex-wrap: nowrap
+    width: 100%
+    justify-content: center
+    align-items: center
+    padding: 3px
+    @include medium
+      flex-direction: column
+    @include small
+      flex-direction: column
     .small
-      font-size: 15px
+      font-size: 1.2rem
+      @include small
+        font-size: 0.9em    
+    span
+      color: $color-terciario
+      font-weight: 500
+      font-size: 1.2rem
+      margin: 0
+  .iconos
+    width: 50px
+    height: 50px
+    margin: 5px
+  
 
+  .animate 
+    -webkit-animation-direction: 5s
+    animation-duration: 5s
+    -webkit-animation-fill-mode: bath
+    animation-fill-mode: bath
+
+  .fadeIn
+    -webkit-animation-name: fadeIn
+    animation-duration: fadeIn
+    -webkit-animation-fill-mode: bath
+    animation-fill-mode: bath
+
+
+  @keyframes animatedgradient
+    0%
+      background-position: 0% 50%
+    50%
+      background-position: 100% 50%
+    100%
+      background-position: 0% 50%
+
+  @-webkit-keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+    visibility: visible
+
+
+  @keyframes rotate
+    0%
+      transform: rotateY(180deg)
+    100%
+      transform: rotateY(360deg)
+      
+  @keyframes fadeIn
+    0%, 10%, 100%
+      opacity: 0
+    100%
+      display: block
+      opacity: 1
+    
+
+  
+  @keyframes load
+      0%, 30%, 60%
+        width: 0,
+      60%, 80%
+        width: 100%
 

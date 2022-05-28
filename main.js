@@ -1,6 +1,6 @@
 $(document).ready(() => {
   let titulo1 = "Danieli Sosa";
-  let titulo2 = "Programadora Frontend Jr.";
+  let titulo2 = "Frontend Developer Jr.";
 
   //funcion para hacer el texto corrido
   let writing = (str) => {
@@ -11,7 +11,7 @@ $(document).ready(() => {
     let printStr = setInterval(() => {
       escribiendo += arrText[i];
       $(".text-corrido1").html(escribiendo + "|");
-      console.log(escribiendo);
+
       i++;
       if (i === arrText.length) {
         clearInterval(printStr);
@@ -27,7 +27,6 @@ $(document).ready(() => {
           $(".text-corrido2").html("");
           let printStr2 = setInterval(() => {
             escribiendo += arrText2[i];
-            console.log(escribiendo);
             $(".text-corrido2").html(escribiendo + "|");
 
             i++;
@@ -74,6 +73,10 @@ $(document).ready(() => {
       $(".cont-nav").css("background", "none");
       $(".text-nav").css("color", "white");
       $("#ico-logo").css("color", "white");
+    }
+
+    if ($(this).scrollTop() >= 250) {
+      $("#cont-about").addClass("animate fadeIn");
     }
   });
 });
